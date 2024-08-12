@@ -1,1 +1,6 @@
-image: bitcrush/tfcweb-rs:main
+image: bitcrush/tfcsite-rs:0.1.1
+replicaCount: 1
+resources:
+  requests:
+    memory: 512Mi
+    cpu: 500m

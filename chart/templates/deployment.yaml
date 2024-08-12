@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "tfcsite.fullname" . }}
+  labels:
+    app: {{ template "tfcsite.fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+    app.kubernetes.io/name: "{{ .Chart.Name }}"
+    app.kubernetes.io/instance: {{ template "tfcsite.fullname" . }}
+    app.kubernetes.io/version: "{{ .Chart.Version }}"
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "tfcsite.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "tfcsite.fullname" . }}
+    spec:
+      containers:
+        - name: {{ template "tfcsite.fullname" . }}
+          image: {{ .Values.image }}
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+          ports:
+            - name: web
+              containerPort: 3000
