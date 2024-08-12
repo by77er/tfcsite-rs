@@ -21,6 +21,7 @@ async fn main() {
     // Set up routes
     let app = Router::new()
         .route("/", get(|| async { Html(render_hero()) }))
+        .route("/boop", get(|| async { ":3".to_owned() }))
         .route("/discord", get_service(Redirect::<Full>::temporary("https://discord.gg/tampafurryclub".parse().unwrap())))
         .route("/telegram", get_service(Redirect::<Full>::temporary("https://t.me/+8ID4Z2VpbadlZmUx".parse().unwrap())))
         .fallback(get_service(ServeDir::new("static")))
