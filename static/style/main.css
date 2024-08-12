@@ -1,0 +1,146 @@
+
+:root {
+    --white: #FFFFFF;
+    --teal: #57F5D9;
+    --green: #18DB95;
+    --aquamarine: #23C6C6;
+}
+
+@font-face {
+    font-family: Coiny;
+    src: url(/font/coiny_regular.ttf);
+}
+
+* {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: rgb(28,27,34);
+    background: url("/img/bg.png"), linear-gradient(140deg, rgba(28,27,34,1) 30%, rgba(18,45,47,1) 80%);
+    font-family: Coiny, sans-serif;
+    min-width: 315px;
+}
+
+h1, h2 {
+    width: auto;
+}
+
+.button {
+    color: var(--white);
+    font-size: 32px;
+    width: fit-content;
+    padding: 8px 24px 8px 24px;
+    border-radius: 48px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: normal;
+}
+
+#discord {
+    background-color: var(--green);
+}
+
+#telegram {
+    background-color: var(--aquamarine);
+}
+
+#button_box {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: normal;
+    gap: 8px;
+}
+
+#hero_box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    padding: 4px;
+    box-sizing: border-box;
+
+    height: 100dvh;
+    gap: 48px;
+}
+
+#hero_content_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    row-gap: 24px;
+}
+
+#text_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: normal;
+}
+
+#hero_title {
+    color: var(--white);
+    font-size: 48px;
+    line-height: 53px;
+
+    text-wrap: pretty;
+}
+
+#hero_subtitle {
+    color: var(--teal);
+    font-size: 40px;
+    line-height: 44px;
+}
+
+#hero_image {
+    max-width: min(95%, 380px);
+}
+
+@media only screen and (max-width: 1180px) {
+    #hero_title, #hero_subtitle {
+        text-align: center;
+    }
+
+    #hero_content_box, #text_box, #button_box {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .button {
+        font-size: 24px;
+    }
+
+    #hero_title {
+        font-size: 40px;
+        line-height: 44px;
+    }
+
+    #hero_subtitle {
+        font-size: 32px;
+        line-height: 36px;
+    }
+}
