@@ -39,15 +39,19 @@ fn render_hero() -> String {
 fn wrapper(content: maud::PreEscaped<String>) -> maud::PreEscaped<String> {
     html! {
         (DOCTYPE)
-        head {
-            meta charset="utf-8";
-            meta content="width=device-width, initial-scale=1" name="viewport";
-            meta name="description" content="Looking for furries in Tampa, FL? Here we are.";
-            link rel="stylesheet" href="/style/main.css";
-            title { "Tampa Furry Club" }
-        }
-        body {
-            (content)
+        html style="visibility: hidden;" {
+            head {
+                meta charset="utf-8";
+                meta content="width=device-width, initial-scale=1" name="viewport";
+                meta name="description" content="Looking for furries in Tampa, FL? Here we are.";
+                link rel="stylesheet" href="/style/main.css";
+                title { "Tampa Furry Club" }
+            }
+            body style="background-color: rgb(28,27,34);" {
+                #dots {
+                    (content)
+                }
+            }
         }
     }
 }

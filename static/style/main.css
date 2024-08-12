@@ -21,13 +21,16 @@ a {
 
 html, body {
     height: 100%;
+    visibility: visible;
 }
 
 body {
-    background: rgb(28,27,34);
-    background: url("/img/bg.png"), linear-gradient(140deg, rgba(28,27,34,1) 30%, rgba(18,45,47,1) 80%);
     font-family: Coiny, sans-serif;
     min-width: 315px;
+    background: rgb(28,27,34);
+    background: linear-gradient(140deg, rgba(28,27,34,1) 30%, rgba(18,45,47,1) 80%);
+    background-size: 200% 200%;
+    animation: grad 10s ease-in-out infinite;
 }
 
 h1, h2 {
@@ -47,6 +50,10 @@ h1, h2 {
     justify-content: center;
     align-items: center;
     align-content: normal;
+}
+
+#dots {
+    background: url("/img/bg.png");
 }
 
 #discord {
@@ -83,7 +90,11 @@ h1, h2 {
     height: 100dvh;
     column-gap: 48px;
     row-gap: 16px;
+
+    animation: enter .5s ease-in-out forwards;
 }
+
+
 
 #hero_content_box {
     display: flex;
@@ -118,6 +129,29 @@ h1, h2 {
 
 #hero_image {
     max-width: min(95%, 380px);
+}
+
+@keyframes enter {
+    0% {
+        opacity: 0;
+        transform: scale(.9, .9);
+        filter: blur(8px);
+    }
+    60% {
+        opacity: 0.35;
+
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+        filter: blur(0px);
+    }
+}
+
+@keyframes grad {
+    0%{background-position:0% 50%}
+    50%{background-position:50% 50%}
+    100%{background-position:0% 50%}
 }
 
 @media only screen and (max-width: 1180px) {
