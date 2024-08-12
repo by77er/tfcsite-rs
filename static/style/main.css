@@ -80,7 +80,8 @@ h1, h2 {
     box-sizing: border-box;
 
     height: 100dvh;
-    gap: 48px;
+    column-gap: 48px;
+    row-gap: 16px;
 }
 
 #hero_content_box {
