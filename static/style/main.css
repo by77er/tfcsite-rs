@@ -37,8 +37,9 @@ h1, h2 {
 .button {
     color: var(--white);
     font-size: 32px;
+    line-height: 36px;
     width: fit-content;
-    padding: 8px 24px 8px 24px;
+    padding: 16px 24px 16px 24px;
     border-radius: 48px;
 
     display: flex;
